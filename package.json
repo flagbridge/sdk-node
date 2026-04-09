@@ -1,21 +1,40 @@
 {
   "name": "@flagbridge/sdk-node",
   "version": "0.1.0",
-  "description": "FlagBridge Node.js/TypeScript SDK",
-  "main": "dist/index.js",
+  "description": "FlagBridge Node.js/TypeScript SDK — feature flag evaluation with SSE real-time updates",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "files": ["dist"],
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check src/"
   },
-  "keywords": ["feature-flags", "flagbridge", "sdk"],
+  "keywords": ["feature-flags", "flagbridge", "sdk", "feature-toggles"],
   "author": "FlagBridge",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flagbridge/flagbridge",
-    "directory": "packages/sdk-node"
+    "url": "https://github.com/flagbridge/sdk-node"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
