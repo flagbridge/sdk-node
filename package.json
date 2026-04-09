@@ -18,7 +18,9 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -26,7 +28,12 @@
     "test:watch": "vitest",
     "lint": "biome check src/"
   },
-  "keywords": ["feature-flags", "flagbridge", "sdk", "feature-toggles"],
+  "keywords": [
+    "feature-flags",
+    "flagbridge",
+    "sdk",
+    "feature-toggles"
+  ],
   "author": "FlagBridge",
   "license": "Apache-2.0",
   "repository": {
@@ -37,6 +44,7 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.4"
   }
 }
